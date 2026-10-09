@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GATE Symmetry Question - Visual Solution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f6f9;
+            margin: 20px;
+        }
+        .container {
+            background: white;
+            padding: 20px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            background-color: #ffffff;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .color-box {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            border: 1px solid #333;
+        }
+        .original { background-color: #ffffff; }
+        .added { background-color: #4CAF50; }
+        .symmetry-line { background-color: #d9534f; height: 3px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Line of Symmetry Solution (Line AB)</h2>
+    <canvas id="symmetryCanvas" width="600" height="300"></canvas>
+    
+    <div class="legend">
+        <div class="legend-item">
+            <div class="color-box original"></div> Original Squares (7)
+        </div>
+        <div class="legend-item">
+            <div class="color-box added"></div> Added Squares for Symmetry (6)
+        </div>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('symmetryCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const tileSize = 40;
+    const startX = 120;
+    const axisY = 150; // Y-coordinate for line AB
+
+    // Original squares relative to grid (col, row relative to line AB)
+    // row > 0 means above line AB, row < 0 means below line AB
+    const originalSquares = [
+        {col: 2, row: 1},
+        {col: 2, row: 2},
+        {col: 1, row: -1},
+        {col: 2, row: -1},
+        {col: 3, row: -1},
+        {col: 4, row: -1},
+        {col: 4, row: -2}
+    ];
+
+    // Added squares to make AB a line of symmetry
+    const addedSquares = [
+        // {col: 1, row: 1},   // Mirror of (1, -1)
+        // {col: 2, row: -2},  // Mirror of (2, 2)
+        // {col: 3, row: 1},   // Mirror of (3, -1)
+        // {col: 4, row: 1},   // Mirror of (4, -1)
+        // {col: 4, row: 2}    // Mirror of (4, -2)
+    ];
+
+    function drawSquare(col, row, isAdded) {
+        const x = startX + (col - 1) * tileSize;
+        // row 1 goes above axisY, row -1 goes below axisY
+        const y = row > 0 ? axisY - row * tileSize : axisY + (-row - 1) * tileSize;
+
+        ctx.fillStyle = isAdded ? '#4CAF50' : '#FFFFFF';
+        ctx.fillRect(x, y, tileSize, tileSize);
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x, y, tileSize, tileSize);
+
+        if (isAdded) {
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 16px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('+', x + tileSize / 2, y + tileSize / 2);
+        }
+    }
+
+    // Draw grid background
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw Added Squares
+    addedSquares.forEach(sq => drawSquare(sq.col, sq.row, true));
+
+    // Draw Original Squares
+    originalSquares.forEach(sq => drawSquare(sq.col, sq.row, false));
+
+    // Draw Line of Symmetry AB
+    ctx.beginPath();
+    ctx.setLineDash([8, 6]);
+    ctx.moveTo(40, axisY);
+    ctx.lineTo(560, axisY);
+    ctx.strokeStyle = '#d9534f';
+    ctx.lineWidth = 3;
+    ctx.stroke();
+
+    // Draw Labels A and B
+    ctx.setLineDash([]);
+    ctx.fillStyle = '#d9534f';
+    ctx.font = 'bold 20px Arial';
+    ctx.fillText('A', 20, axisY + 6);
+    ctx.fillText('B', 570, axisY + 6);
+</script>
+
+</body>
+</html>
