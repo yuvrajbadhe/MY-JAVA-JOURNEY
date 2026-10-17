@@ -1,4 +1,3 @@
-package com.kunal.strings;
 
 public class Stream {
     public static void main(String[] args) {

@@ -2,6 +2,9 @@ public class Fibonnaci {
     static void main() {
         int n = 2 ;
         System.out.println(fibo(n));
+        int[] arr = {} ;
+        System.out.println(arr);
+        
     }
     static int fibo(int n){
         if(n < 2){

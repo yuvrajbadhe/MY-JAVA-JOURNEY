@@ -1,4 +1,3 @@
-package com.kunal.strings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,7 +6,7 @@ import java.util.List;
 public class SubSet {
     public static void main(String[] args) {
         int[] arr = {1, 2, 2};
-        List<List<Integer>> ans = subsetDuplicate(arr);
+        List<List<Integer>> ans = subset(arr);
         for (List<Integer> list : ans) {
             System.out.println(list);
         }
