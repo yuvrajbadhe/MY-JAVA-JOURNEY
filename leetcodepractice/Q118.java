@@ -1,7 +1,7 @@
 import java.util.* ;
 public class Q118{
     public static void main(String[] args){
-       List<List<Integer>> answer = pat1(5);
+       List<List<Integer>> answer = pat1(3 + 1);
        System.out.println(answer);
     }
     // static void pat1(int n){
