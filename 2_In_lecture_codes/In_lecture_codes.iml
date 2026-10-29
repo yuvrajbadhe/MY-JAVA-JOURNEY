@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/L10_String _&amp;_StringBuilders" isTestSource="false" packagePrefix="com.kunal" />
+      <sourceFolder url="file://$MODULE_DIR$/L11_Patterns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/L2_Introduction" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/L3_Conditional_&amp;_Loops" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/L6_Array_&amp;_Array_List" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/L8_Binary_search" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/L9_10_11_Sorting" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

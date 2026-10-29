@@ -1,0 +1,20 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "leetcodepractice",
+        "2_In_lecture_codes/recursion_codes/l5_sub_string",
+        "2_In_lecture_codes/recursion_codes/l1_recursion",
+        "2_In_lecture_codes/maths",
+        "2_In_lecture_codes/L9_10_11_Sorting",
+        "2_In_lecture_codes/L8_Binary_search",
+        "2_In_lecture_codes/L6_Array_&_Array_List",
+        "2_In_lecture_codes/L5_Functions_&_Methods/Functions",
+        "2_In_lecture_codes/L4_Switch_Cases",
+        "2_In_lecture_codes/L3_Conditional_&_Loops/Loops",
+        "2_In_lecture_codes/L3_Conditional_&_Loops",
+        "2_In_lecture_codes/L2_Introduction",
+        "2_In_lecture_codes/L11_Patterns",
+        "2_In_lecture_codes/L10_String _&_StringBuilders",
+        "2_In_lecture_codes/recursion_codes/maze&backtracking"
+    ]
+}
